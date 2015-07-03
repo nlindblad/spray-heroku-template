@@ -8,6 +8,8 @@ scalaVersion := "2.11.7"
 
 resolvers += "spray repo" at "http://repo.spray.io"
 
+herokuAppName in Compile := "pacific-meadow-xxxx"
+
 libraryDependencies ++= {
   val akkaV = "2.3.9"
   val sprayV = "1.3.3"
@@ -18,6 +20,6 @@ libraryDependencies ++= {
   )
 }
 
-mainClass in Compile := Some("testnativepackager.Main")
+mainClass in Compile := Some("info.lindblad.playground.heroku.Main")
 
 lazy val root = (project in file(".")).enablePlugins(SbtNativePackager).enablePlugins(JavaServerAppPackaging)

@@ -1,13 +1,14 @@
-package testnativepackager
-
+package info.lindblad.playground.heroku
 
 import akka.actor.ActorSystem
 import spray.routing.SimpleRoutingApp
 
+import Configuration._
+
 object Main extends App with SimpleRoutingApp {
   implicit val system = ActorSystem("my-system")
 
-  startServer(interface = "localhost", port = 8080) {
+  startServer(interface = Configuration.interface, port = Configuration.port ){
     path("hello") {
       get {
         complete {
